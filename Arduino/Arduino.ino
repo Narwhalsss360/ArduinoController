@@ -94,9 +94,13 @@ void setup()
 {
 #ifdef USE_LED_BUILTIN
 	pinMode(LED_BUILTIN, OUTPUT);
+	digitalWrite(LED_BUILTIN, HIGH);
 #endif
 	Serial.begin(SERIALCOM_BAUD);
 	while (!Serial);
+#ifdef USE_LED_BUILTIN
+	digitalWrite(LED_BUILTIN, LOW);
+#endif
 }
 
 void loop()
