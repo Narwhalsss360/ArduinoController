@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArduinoController));
             this.DoComboBox = new System.Windows.Forms.ComboBox();
             this.PinControlModeComboBox = new System.Windows.Forms.ComboBox();
             this.PinControlValueComboBox = new System.Windows.Forms.ComboBox();
@@ -150,7 +151,8 @@
             this.AcceptButton = this.DoButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 188);
+            this.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.ClientSize = new System.Drawing.Size(480, 183);
             this.Controls.Add(this.PinSelectTextBox);
             this.Controls.Add(this.SaveTextButton);
             this.Controls.Add(this.ClearTextBoxButton);
@@ -161,6 +163,9 @@
             this.Controls.Add(this.PinControlValueComboBox);
             this.Controls.Add(this.PinControlModeComboBox);
             this.Controls.Add(this.DoComboBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "ArduinoController";
             this.Text = "Arduino Controller";
             this.ResumeLayout(false);

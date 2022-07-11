@@ -248,11 +248,12 @@ namespace Controller
         {
             UseWaitCursor = true;
             string Location = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            using (DebugFile = new FileStream($"{Location}\\Output.txt", FileMode.Create, FileAccess.Write))
+            using (DebugFile = new FileStream($"{ Location }\\Output.txt", FileMode.Create, FileAccess.Write))
             {
                 byte[] OutputTextBoxBytes = Encoding.ASCII.GetBytes(OutputTextBox.Text);
                 DebugFile.Write(OutputTextBoxBytes, 0, OutputTextBoxBytes.Length);
             }
+            SendToOutput($"Saved this output to file { Location }\\Output.txt");
             UseWaitCursor = false;
         }
 
